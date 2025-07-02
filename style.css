@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.2;
+    overflow: hidden;
+}
+
+.background-images::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url('WhatsApp Görsel 2025-07-03 saat 00.24.16_1ebe5386.jpg'),
+        url('WhatsApp Görsel 2025-07-03 saat 00.25.07_2416fa8c.jpg'),
+        url('WhatsApp Görsel 2025-07-03 saat 00.25.07_4720dd49.jpg'),
+        url('WhatsApp Görsel 2025-07-03 saat 00.25.07_57dffc68.jpg'),
+        url('WhatsApp Görsel 2025-07-03 saat 00.25.07_974d80ff.jpg');
+    background-position: 
+        10% 10%,
+        80% 20%,
+        30% 70%,
+        70% 80%,
+        50% 50%;
+    background-repeat: no-repeat;
+    background-size: 250px auto, 200px auto, 220px auto, 180px auto, 230px auto;
+    filter: grayscale(30%) brightness(0.8) contrast(1.2);
+    animation: floatImages 60s infinite alternate ease-in-out;
+}
+
+@keyframes floatImages {
+    0% {
+        background-position: 
+            10% 10%,
+            80% 20%,
+            30% 70%,
+            70% 80%,
+            50% 50%;
+    }
+    100% {
+        background-position: 
+            15% 15%,
+            75% 25%,
+            35% 65%,
+            65% 85%,
+            45% 55%;
+    }
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#yes-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#no-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

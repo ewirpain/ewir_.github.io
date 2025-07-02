@@ -1,0 +1,47 @@
+# Google Drive Müzik Ekleme Talimatları
+
+Bu web sayfasında şu anda Google Drive'dan bir müzik dosyası kullanılmaktadır. Kendi müzik dosyanızı eklemek isterseniz aşağıdaki adımları izleyebilirsiniz:
+
+1. Müzik dosyanızı Google Drive'a yükleyin.
+
+2. Dosyayı herkese açık olarak paylaşın:
+   - Dosyaya sağ tıklayın ve "Paylaş" seçeneğini seçin.
+   - "Herkes bu bağlantıya sahip olan kişiler" seçeneğini işaretleyin.
+   - "Görüntüleyici" izni verin ve "Bitti" düğmesine tıklayın.
+
+3. Paylaşım bağlantısını kopyalayın. Bağlantı şuna benzer olacaktır:
+   ```
+   https://drive.google.com/file/d/DOSYA_ID/view?usp=sharing
+   ```
+
+4. `script.js` dosyasını bir metin editörü ile açın (Not Defteri, Visual Studio Code, vb.).
+
+5. Aşağıdaki satırı bulun (yaklaşık 75. satır civarında):
+   ```javascript
+   const driveID = '1AeidBxRQDF2NCoEut4bVe6X7YMp4Kvx1';
+   ```
+
+6. Bu satırdaki Drive ID'yi (`1AeidBxRQDF2NCoEut4bVe6X7YMp4Kvx1`) kendi Google Drive dosyanızın ID'si ile değiştirin.
+   - Drive ID, paylaşım bağlantısındaki `/d/` ve `/view` arasındaki kısımdır.
+   - Örneğin, `https://drive.google.com/file/d/ABCDEFG/view?usp=sharing` bağlantısındaki ID `ABCDEFG`'dir.
+
+7. Değişiklikleri kaydedin ve web sayfasını yeniden açın.
+
+## Ses Seviyesini Ayarlama
+
+Müziğin ses seviyesini değiştirmek isterseniz, aşağıdaki satırı bulun:
+
+```javascript
+audio.volume = 0.5;
+```
+
+Bu değeri 0 ile 1 arasında bir sayı olarak değiştirebilirsiniz:
+- 0: Tamamen sessiz
+- 0.5: Orta ses seviyesi
+- 1: Maksimum ses seviyesi
+
+## Not
+
+Bazı tarayıcılar, kullanıcı etkileşimi olmadan otomatik müzik çalmaya izin vermeyebilir. Bu durumda, sayfa açıldığında müzik otomatik olarak başlamayabilir ve müzik düğmesine tıklamanız gerekebilir.
+
+Ayrıca, Google Drive'dan büyük dosyaları indirmek için sınırlamalar olabilir. En iyi sonuç için 10 MB'den küçük MP3 dosyaları kullanmanız önerilir.
